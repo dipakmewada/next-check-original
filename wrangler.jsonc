@@ -14,5 +14,9 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "NEXT_PUBLIC_GREETING": "Hip hip hurray!",
+    "NEXT_PUBLIC_API_URL": "https://jsonplaceholder.typicode.com/posts"
+  },
   "upload_source_maps": true
 }
