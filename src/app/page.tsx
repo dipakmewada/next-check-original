@@ -26,7 +26,7 @@ type Post = {
 export default async function Home() {
 
     const currentDate = new Date().toUTCString();
-    const greeting = process.env.NEXT_PUBLIC_API_URL || "Hello, SSR Component!";
+    const greeting = process.env.NEXT_PUBLIC_GREETING || "Hello, SSR Component!";
     const data = await fetchData();
 
     return (
