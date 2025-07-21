@@ -1,6 +1,6 @@
 
 async function fetchData(): Promise<Post[]> {
-  const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   if (!apiUrl) {
     throw new Error("API_DATA environment variable is not defined");
   }
