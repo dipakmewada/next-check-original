@@ -23,15 +23,23 @@ type Post = {
   body: string;
 };
 
+export interface Env {
+  API_HOST: string;
+}
+
+
 export default async function Home() {
 
     const currentDate = new Date().toUTCString();
-    const greeting = process.env.NEXT_PUBLIC_GREETING || "Hello, SSR Component!";
+    const greeting = process.env.NEXT_PUBLIC_API_URL || "Hello, SSR Component!";
+    const greeting2 = process.env.NEXT_PUBLIC_API_URL || "Hello, SSR Component!";
+    
     const data = await fetchData();
 
     return (
       <div>
         <h1>{greeting}</h1>
+        <h1>{greeting2}</h1>
         <p>
           This component is server-side rendered (SSR) and displays the current
           date:
