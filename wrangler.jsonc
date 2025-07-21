@@ -14,5 +14,8 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "NEXT_PUBLIC_GREETING": "Hip hip hurray!"
+  },
   "upload_source_maps": true
 }
