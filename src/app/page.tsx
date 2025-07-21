@@ -1,6 +1,6 @@
 
 async function fetchData(): Promise<Post[]> {
-  const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   if (!apiUrl) {
     throw new Error("API_DATA environment variable is not defined");
   }
@@ -31,7 +31,7 @@ export interface Env {
 export default async function Home() {
 
     const currentDate = new Date().toUTCString();
-    const greeting = process.env.NEXT_PUBLIC_API_URL || "Hello, SSR Component!";
+    const greeting = process.env.NEXT_PUBLIC_GREETING || "Hello, SSR Component!";
     const greeting2 = process.env.NEXT_PUBLIC_API_URL || "Hello, SSR Component!";
     
     const data = await fetchData();
@@ -42,7 +42,7 @@ export default async function Home() {
         <h1>{greeting2}</h1>
         <p>
           This component is server-side rendered (SSR) and displays the current
-          date:
+          date: 123
         </p>
         <p>{currentDate}</p>
         <h2>Data Fetching Example (Server Component)</h2>
